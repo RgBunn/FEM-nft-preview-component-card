@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --mainBG-very-dark-blue: hsl(217, 54%, 11%);
+  --cardBG-very-dark-blue: hsl(216, 50%, 16%);
+  --line-very-dark-blue: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--mainBG-very-dark-blue);
+}
+h1 {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 22px;
+  margin: 20px 0;
+}
+h1:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+p {
+  color: var(--soft-blue);
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 18px;
+}
+.card {
+  background-color: var(--cardBG-very-dark-blue);
+  width: 350px;
+  padding: 25px;
+  border-radius: 20px;
+}
+.card-image img {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+}
+.card-image {
+  height: 300px;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--cyan);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+.overlay-icon {
+  position: absolute;
+  height: 30px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.card-image:hover .overlay {
+  opacity: 0.5;
+}
+.card-image:hover .overlay-icon {
+  visibility: visible;
+  opacity: 1;
+}
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line-very-dark-blue);
+}
+.card-price,
+.card-time {
+  display: flex;
+  align-items: center;
+}
+
+.price-value {
+  color: var(--cyan);
+  margin-left: 5px;
+}
+.card-time img {
+  height: 20px;
+  margin-right: 10px;
+}
+.card-creator {
+  display: flex;
+}
+.avatar img {
+  height: 40px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.creators-name {
+  color: var(--white);
+}
+.creators-name:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
